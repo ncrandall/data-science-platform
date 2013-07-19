@@ -1,12 +1,10 @@
-Open Data Sceince Platform
---------------------------
+#Open Data Sceince Platform
 
 The Open Data Science Platform makes sharing data simple and standardized. 
 Currently there's a real struggle to find publicly available data.  
 
 
-What type of data?
-==================
+###What type of data?
 
 Everything from school science projects to fortune 500 public data
 is encouraged to be published on the site. The more diverse the data the
@@ -19,8 +17,7 @@ contact methods on the site. Care must be taken in sharing data and
 our hope is to encourage the publishing of data through legal means.
 
 
-What can I do with the data?
-============================
+###What can I do with the data?
 
 The data we ask to be posted is done so through a GPL aggreement. This means
 that you may use the data for whatever legal purposes you'd like, but if
@@ -29,8 +26,7 @@ original data. By doing so you build your own profile and can give insights
 to others about data they may not have conceptualized yet.
 
 
-How can I help?
-===============
+###How can I help?
 
 Please contribute! Some of the following actions will be helpful:
 
