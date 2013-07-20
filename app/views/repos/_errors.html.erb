@@ -1,0 +1,7 @@
+<% if repo.errors.any? %>
+  <ul>
+  <% repo.errors.full_messages.each do |message| %>
+    <li class="text-error"><%= message %></li>
+  <% end %>
+  </ul>
+<% end %>
