@@ -9,6 +9,7 @@ gem 'devise', '3.0.0'
 
 # File uploads
 gem 'paperclip', '3.5.0'
+gem 'aws-sdk'
 
 # Use sqlite3 as the database for Active Record
 gem 'pg'
