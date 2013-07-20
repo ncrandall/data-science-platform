@@ -1,0 +1,10 @@
+<%= repo.name %>
+<%= repo.description %>
+<%= repo.schema %>
+<%= repo.num_rows %>
+<%= repo.size %>
+<% if repo.public? %>
+  Public
+<% else %>
+  Private
+<% end %>

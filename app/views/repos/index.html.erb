@@ -1,0 +1,6 @@
+<% @repos.each do |repo| %>
+  <div class="span8">
+    <%= link_to repo.name, repo %>
+    <%= repo.user.full_name %>
+  </div>
+<% end %>

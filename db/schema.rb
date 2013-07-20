@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130719224958) do
+ActiveRecord::Schema.define(version: 20130720000221) do
+
+  create_table "repos", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.text     "schema"
+    t.integer  "parent_id"
+    t.boolean  "public"
+    t.integer  "num_rows"
+    t.float    "size"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
