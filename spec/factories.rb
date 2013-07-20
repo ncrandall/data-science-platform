@@ -16,4 +16,11 @@ FactoryGirl.define do
     sequence(:last_name) { |n| "Doe#{n}" }
     about "Best John Doe there ever was"
   end
+
+  factory :data_source do
+    source_file_name "db.csv"
+    source_file_size 1024
+    source_content_type "text/plain"
+    source_updated_at DateTime.now
+  end
 end

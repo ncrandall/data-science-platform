@@ -21,6 +21,9 @@ class ReposController < ApplicationController
       redirect_to @repo
     else
       flash[:error] = "Error creating repo"
+      @repo.errors.each do |e|
+        Rails.logger.info(e)
+      end
       render 'new'
     end
   end
@@ -56,7 +59,7 @@ class ReposController < ApplicationController
   private
   
   def repo_params
-    params.require(:repo).permit(:name, :description, :schema, :size, :num_rows, :public)
+    params.require(:repo).permit(:name, :description, :schema, :size, :num_rows, :public, data_sources_attributes: [[ :source ]])
   end
 
 end

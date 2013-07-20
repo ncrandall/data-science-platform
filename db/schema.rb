@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130720000221) do
+ActiveRecord::Schema.define(version: 20130720031127) do
+
+  create_table "data_sources", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "source_file_name"
+    t.string   "source_content_type"
+    t.integer  "source_file_size"
+    t.datetime "source_updated_at"
+    t.integer  "repo_id"
+  end
 
   create_table "repos", force: true do |t|
     t.string   "name"

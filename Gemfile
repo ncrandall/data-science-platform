@@ -7,6 +7,9 @@ gem 'rails', '4.0.0'
 # User authentication
 gem 'devise', '3.0.0'
 
+# File uploads
+gem 'paperclip', '3.5.0'
+
 # Use sqlite3 as the database for Active Record
 gem 'pg'
 

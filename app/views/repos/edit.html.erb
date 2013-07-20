@@ -1,4 +1,4 @@
 <%= form_for @repo do |f| %>
-  <%= render 'repo_fields', f: f %>
+  <%= render 'repo_fields', f: f, repo: @repo %>
   <%= f.submit "Edit Repo" %>
 <% end %>
