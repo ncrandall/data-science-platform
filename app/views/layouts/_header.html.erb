@@ -1,0 +1,17 @@
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+    <ul class="nav pull-right">
+      <li><%= link_to "Browse Data Repos", repos_path %></li>
+      <% if user_signed_in? %>
+        <li><%= link_to "My Repos", repos_path %></li>
+        <li><%= link_to "My Account", edit_user_registration_path %></li>
+        <li><%= link_to "Sign Out", destroy_user_session_path, method: :DELETE %></li>
+      <% else %>
+        <li><%= link_to "Sign In", new_user_session_path %></li>
+      <% end %>
+    </ul>
+    <span class="brand"><%= link_to "dshub", root_path %><div class="beta">beta</div></span>
+    </div>
+  </div>
+</div>

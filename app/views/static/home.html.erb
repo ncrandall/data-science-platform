@@ -1,1 +1,62 @@
-Open Data Science Platform
+<div class="row">
+  <div class="span10 offset1">
+    <h2>Welcome to Data Science Hub - Share your data!</h2>
+    <p class="medium">
+      We provide a standardized platform for Data Scientists of all levels 
+      to share, analyze, and contribute to open data. Whether your data 
+      comes from a sixth grade science project or a fortune 500 company, 
+      we want you to share it!
+    </p>
+    <p class="medium">
+      Data Sources are contained within repos and are publicly available. 
+      Currently we only support csv files on our servers, but hope to 
+      expand to other data sources (internal and external). We ask that
+      only open data be posted with proper attributions to its creators
+    </p>
+  </div>
+</div>
+<br />
+
+<div class="row">
+  <div class="span10 offset1 alert-info text-center stats">
+    <span class="text-success"><%= @data_sources %></span> Data Sources - <span class="text-success"><%= @records %></span> Total Records<br /><br />
+
+      <%= link_to "Start Sharing", new_repo_path, class: "btn btn-large btn-primary text-center" %>
+  </div>
+</div>
+<br />
+
+
+<br />
+<div class="row">
+  <div class="span4">
+    <div class="box">
+      <h3>Share any data</h3>
+      Anything from school projects to citywide 
+      traffic congestion is encouraged on dshub.
+
+      <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+  <div class="span4">
+    <div class="box">
+      <h3>Analyze and Publish</h3>
+      When you use data from public repos
+      show the owner and those following the
+      repo what you've done with the data!
+      <%= link_to "Browse Data Repositories", repos_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+  <div class="span4">
+    <div class="box">
+      <h3>Contribute</h3>
+      Not only can you to contribute
+      to data publish on dshub, but we also
+      need help and suggestions with the platform.
+      The plaform is open sourced and need
+      your help to help improve the codebase.
+
+      <%= link_to "View Code", "http://github.com/ncrandall/data-science-platform", class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>

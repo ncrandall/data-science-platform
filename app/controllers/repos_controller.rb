@@ -1,5 +1,5 @@
 class ReposController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, except: [:show, :index]
 
   def index
     @repos = Repo.all
