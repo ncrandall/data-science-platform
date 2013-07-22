@@ -1,3 +1,39 @@
 // Place all the styles related to the Repo controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.repo_list {
+  height: 125px;
+  border: 3px solid #DDD;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  padding: 10px;
+  position: relative;
+  a {
+    font-size: 22pt;
+    font-weight: bold;
+  }
+  a:hover { 
+    text-decoration: none;
+  }
+  .repo_date_posted {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 10pt;
+    font-style: italic;
+    color: #666;
+  }
+  .repo_stats {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    a {
+      font-size: 12pt;
+    }
+  }
+  .repo_description {
+    font-size: 10pt;
+    padding-left: 10px;
+  }
+}

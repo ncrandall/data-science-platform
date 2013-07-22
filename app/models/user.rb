@@ -5,6 +5,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  validates :username, presence: true, uniqueness: true, length: { in: 6..20 }
+  validates :email, presence: true
+
   has_many :repos
 
   def full_name

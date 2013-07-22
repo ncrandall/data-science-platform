@@ -1,6 +1,22 @@
-<% @repos.each do |repo| %>
-  <div class="span8">
-    <%= link_to repo.name, repo %>
-    <%= repo.user.full_name %>
-  </div>
-<% end %>
+<div class="row">
+  <span class="span3">
+    <ul class="nav">
+      <li><%= link_to "Popular", "?filter=popular" %></li>
+      <li><%= link_to "New", "?filter=new" %></li>
+      <li><%= link_to "Active", "?filter=active" %></li>
+    </ul>
+  </span>
+  <span class="span9">
+  <% @repos.each do |repo| %>
+    <div class="repo_list">
+      <%= link_to "#{repo.name} / #{repo.user.username}", repo, class: "medium" %><br /><br />
+      <div class="repo_description"><%= "#{repo.description[0..140]}..." %></div>
+      <span class="repo_stats">
+        Data Sources: <%= repo.data_sources.count %> - Rows: <%= repo.num_rows %>
+        <%= link_to("delete", repo, method: :DELETE) if current_user.id == repo.user.id %>
+      </span>
+      <span class="repo_date_posted">Created On <%= repo.created_at.strftime("Created %B %d %Y") %></span>
+    </div>
+  <% end %>
+  </span>
+</div>
