@@ -4,7 +4,6 @@
     <ul class="nav pull-right">
       <li><%= link_to "Browse Data Repos", repos_path %></li>
       <% if user_signed_in? %>
-        <li><%= link_to "My Repos", repos_path %></li>
         <li><%= link_to "My Account", edit_user_registration_path %></li>
         <li><%= link_to "Sign Out", destroy_user_session_path, method: :DELETE %></li>
       <% else %>

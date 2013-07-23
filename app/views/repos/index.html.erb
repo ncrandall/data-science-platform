@@ -13,7 +13,7 @@
       <div class="repo_description"><%= "#{repo.description[0..140]}..." %></div>
       <span class="repo_stats">
         Data Sources: <%= repo.data_sources.count %> - Rows: <%= repo.num_rows %>
-        <%= link_to("delete", repo, method: :DELETE) if current_user.id == repo.user.id %>
+        <%= link_to("delete", repo, method: :DELETE) if current_user?(repo.user.id) %>
       </span>
       <span class="repo_date_posted">Created On <%= repo.created_at.strftime("Created %B %d %Y") %></span>
     </div>

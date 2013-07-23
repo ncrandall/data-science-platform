@@ -1,10 +1,29 @@
-<%= repo.name %>
-<%= repo.description %>
-<%= repo.schema %>
-<%= repo.num_rows %>
-<%= repo.size %>
-<% if repo.public? %>
-  Public
-<% else %>
-  Private
-<% end %>
+<h2><%= repo.name %> / <%= link_to repo.user.username, '#' %></h2>
+<div class="row">
+  <div class="span6">
+    <h3>Data Sources</h3>
+    <% repo.data_sources.each do |ds| %>
+      <div class="data_source">
+        <%= link_to ds.source_file_name, ds.source.url %>
+        <span class="data_source_stats"><%= ds.source_file_size %> bytes</span>
+      </div>
+    <% end %>
+    <%= link_to("+ add file", "#") if current_user?(repo.user.id) && repo.data_sources.count < 5 %>
+
+    <h3>Description</h3>
+    <p><b>Name</b>:<br /><%= repo.name %></p>
+    <p><b>Description</b>:<br /><%= repo.description %></p>
+    <p><b>Schema</b>:<br /><%= repo.schema %></p>
+    <p><b>Rows</b>: <%= repo.num_rows %></p>
+    <p><b>Size</b>: <%= repo.size %> bytes</p>
+    <% if repo.public? || repo.public.nil? %>
+      Public
+    <% else %>
+      Private
+    <% end %>
+    </div>
+  <div class="span5">
+    <h3>Community Use of Data</h3>
+    <%= link_to "+ Show your work", "#" %>
+  </div>
+</div>

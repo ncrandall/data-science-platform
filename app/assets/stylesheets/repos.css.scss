@@ -37,3 +37,27 @@
     padding-left: 10px;
   }
 }
+
+.data_source {
+  border: 2px solid #DDD;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  position: relative;
+  a {
+    font-weight: bold;
+    font-size: 14pt;
+    display:block;
+    padding: 5px;
+  }
+  a:hover {
+    text-decoration: none;
+    background-color: #DDD;
+    color: #0088CC;
+  }
+  .data_source_stats {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    color: #666;
+  }
+}
