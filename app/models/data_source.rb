@@ -17,7 +17,9 @@ class DataSource < ActiveRecord::Base
   end
 
   def get_rows_from_file
-    f = File.open(source.path)
+    url = source.url
+    url = source.path if Rails.env != 'production'
+    f = open(url)
     cnt = 0
 
     f.each do |l|
