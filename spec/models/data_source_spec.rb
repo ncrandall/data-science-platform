@@ -9,6 +9,7 @@ describe DataSource do
   it { should respond_to :source_file_size }
   it { should respond_to :source_content_type }
   it { should respond_to :source_updated_at }
+  it { should respond_to :rows }
   it { should be_valid }
 
 end

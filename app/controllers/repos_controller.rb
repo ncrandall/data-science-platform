@@ -59,7 +59,7 @@ class ReposController < ApplicationController
   private
   
   def repo_params
-    params.require(:repo).permit(:name, :description, :schema, :size, :num_rows, :public, data_sources_attributes: [[ :source ]])
+    params.require(:repo).permit(:name, :description, :schema, :public, data_sources_attributes: [[ :source ]])
   end
 
 end

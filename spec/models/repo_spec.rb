@@ -1,8 +1,10 @@
 require 'spec_helper'
 
 describe Repo do
+  let(:data_source) { FactoryGirl.create(:data_source) }
+  let(:repo) { FactoryGirl.build(:repo) }
 
-  let(:repo) { FactoryGirl.create(:repo) }
+  before { repo.data_sources.push(data_source) }
 
   subject { repo }
 
@@ -10,8 +12,6 @@ describe Repo do
   it { should respond_to :description }
   it { should respond_to :schema }
   it { should respond_to :parent_id }
-  it { should respond_to :public }
-  it { should respond_to :num_rows }
   it { should respond_to :public }
   it { should respond_to :user }
   it { should be_valid }

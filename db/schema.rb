@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130722183247) do
+ActiveRecord::Schema.define(version: 20130723193552) do
 
   create_table "data_sources", force: true do |t|
     t.datetime "created_at"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20130722183247) do
     t.integer  "source_file_size"
     t.datetime "source_updated_at"
     t.integer  "repo_id"
+    t.integer  "rows",                default: 0
   end
 
   create_table "repos", force: true do |t|
@@ -28,9 +29,7 @@ ActiveRecord::Schema.define(version: 20130722183247) do
     t.text     "description"
     t.text     "schema"
     t.integer  "parent_id"
-    t.boolean  "public"
-    t.integer  "num_rows"
-    t.float    "size"
+    t.boolean  "public",      default: true
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"

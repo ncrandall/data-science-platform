@@ -13,12 +13,4 @@ class Repo < ActiveRecord::Base
       errors.add(:base, 'Must have at least a data source')
     end
   end
-
-  def self.records_count
-    cnt = 0
-    Repo.all.each do |r|
-      cnt += r.num_rows
-    end
-    cnt
-  end
 end

@@ -14,8 +14,6 @@
     <p><b>Name</b>:<br /><%= repo.name %></p>
     <p><b>Description</b>:<br /><%= repo.description %></p>
     <p><b>Schema</b>:<br /><%= repo.schema %></p>
-    <p><b>Rows</b>: <%= repo.num_rows %></p>
-    <p><b>Size</b>: <%= repo.size %> bytes</p>
     <% if repo.public? || repo.public.nil? %>
       Public
     <% else %>

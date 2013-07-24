@@ -11,14 +11,6 @@
     <%= f.label :schema %>
     <%= f.text_area :schema %>
   </p>
-  <p>
-    <%= f.label :num_rows, text: "Number of Rows" %>
-    <%= f.text_field :num_rows %>
-  </p>
-  <p>
-    <%= f.label :size, text: "Size (kb)" %>
-    <%= f.text_field :size %>
-  </p>
   <%= f.fields_for :data_sources, repo.data_sources.build do |builder| %>
     <%= render 'data_sources/data_source_fields', f: builder %>
   <% end %>
