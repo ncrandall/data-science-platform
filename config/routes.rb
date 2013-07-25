@@ -8,6 +8,7 @@ DataSciencePlatform::Application.routes.draw do
 
   resources :repos
   resources :data_actions, only: [:create, :destroy]
+  resources :favorites, only: [:create, :destroy]
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

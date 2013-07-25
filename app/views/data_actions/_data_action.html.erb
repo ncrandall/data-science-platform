@@ -6,6 +6,12 @@
     <%= link_to data_action.url, data_action.url %>
   </p>
   <span class="date">
-    <%= data_action.created_at.strftime("%B %d") %>
+    <%= data_action.created_at.strftime("%B %d") %> 
+    <%= link_to "delete", data_action, method: :DELETE if current_user == data_action.user %>
   </span>
+  <% unless current_user.nil? %>
+    <span class="text-warning pull-right data-action-<%= data_action.id %>">
+      <%= render 'favorites/favorited', data_action: data_action %>
+    </span>
+  <% end %>
 </div>

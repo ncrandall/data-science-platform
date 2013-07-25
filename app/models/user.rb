@@ -28,4 +28,12 @@ class User < ActiveRecord::Base
       where(conditions).first
     end
   end
+
+  def favorited?(data_action_id)
+    !favorite(data_action_id).nil? 
+  end
+
+  def favorite(data_action_id)
+    favorites.where(data_action_id: data_action_id).first
+  end
 end

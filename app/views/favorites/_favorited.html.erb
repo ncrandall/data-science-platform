@@ -1,0 +1,11 @@
+<% if current_user.favorited?(data_action.user) %>
+  <%= form_for current_user.favorite(data_action.user), remote: true, method: :DELETE do |f| %>
+    <%= f.hidden_field :data_action_id, value: data_action.id %>
+    <%= f.submit "un-favorite", class: "btn-warning" %>
+  <% end %>
+<% else %>
+  <%= form_for data_action.favorites.build, remote: true do |f| %>
+    <%= f.hidden_field :data_action_id, value: data_action.id %>
+    <%= f.submit "favorite" %>
+  <% end %>
+<% end %>
