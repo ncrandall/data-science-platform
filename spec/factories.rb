@@ -20,4 +20,9 @@ FactoryGirl.define do
     source File.new(Rails.root + "spec/test-db.csv")
     rows 128
   end
+
+  factory :data_action do 
+    description "I used this repos data in my own data"
+    url "http://google.com"
+  end
 end

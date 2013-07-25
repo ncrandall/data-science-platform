@@ -12,6 +12,8 @@ class User < ActiveRecord::Base
   validates :email, presence: true
 
   has_many :repos
+  has_many :data_actions
+  has_many :favorites
 
   def full_name
     "#{first_name} #{last_name}"

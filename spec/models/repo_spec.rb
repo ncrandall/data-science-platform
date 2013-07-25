@@ -14,6 +14,7 @@ describe Repo do
   it { should respond_to :parent_id }
   it { should respond_to :public }
   it { should respond_to :user }
+  it { should respond_to :data_actions }
   it { should be_valid }
 
   describe "name must exist" do

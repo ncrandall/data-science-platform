@@ -7,6 +7,7 @@ DataSciencePlatform::Application.routes.draw do
   root 'static#home'
 
   resources :repos
+  resources :data_actions, only: [:create, :destroy]
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

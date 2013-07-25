@@ -4,6 +4,7 @@ class Repo < ActiveRecord::Base
   validate :must_have_children
 
   has_many :data_sources
+  has_many :data_actions
   belongs_to :user
 
   accepts_nested_attributes_for :data_sources

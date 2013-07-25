@@ -1,0 +1,11 @@
+<div class="data_action">
+  <p>
+    <%= data_action.description %>
+  </p>
+  <p>
+    <%= link_to data_action.url, data_action.url %>
+  </p>
+  <span class="date">
+    <%= data_action.created_at.strftime("%B %d") %>
+  </span>
+</div>

@@ -14,6 +14,8 @@ describe User do
   it { should respond_to :first_name }
   it { should respond_to :last_name }
   it { should respond_to :about }
+  it { should respond_to :data_actions }
+  it { should respond_to :favorites }
   it { should be_valid }
 
   describe "username should be unique" do

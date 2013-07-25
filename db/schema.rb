@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130723193552) do
+ActiveRecord::Schema.define(version: 20130725213412) do
+
+  create_table "data_actions", force: true do |t|
+    t.string   "description"
+    t.string   "url"
+    t.integer  "user_id"
+    t.integer  "repo_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "data_sources", force: true do |t|
     t.datetime "created_at"
@@ -22,6 +31,13 @@ ActiveRecord::Schema.define(version: 20130723193552) do
     t.datetime "source_updated_at"
     t.integer  "repo_id"
     t.integer  "rows",                default: 0
+  end
+
+  create_table "favorites", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "data_action_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "repos", force: true do |t|

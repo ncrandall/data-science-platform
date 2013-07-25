@@ -20,8 +20,16 @@
       Private
     <% end %>
     </div>
-  <div class="span5">
+  <div class="span5 data_actions">
     <h3>Community Use of Data</h3>
-    <%= link_to "+ Show your work", "#" %>
+    <% repo.data_actions.each do |a,n| %>
+      <%= render a %>
+    <% end %>
+    <%= form_for repo.data_actions.build do |f| %>
+      <%= f.text_area :description, placeholder: "Describe your work", class: "span5" %>
+      <%= f.hidden_field :repo_id, value: repo.id %>
+      <%= f.text_field :url, placeholder: "url to work (website, image, article, ...)", class: "span5" %><br />
+      <%= f.submit "Show your work" %>
+    <% end unless current_user.nil?%>
   </div>
 </div>
